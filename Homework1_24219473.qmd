@@ -1,0 +1,55 @@
+---
+title: "Quarto Assignment - Exploring the mtcars Dataset"
+author: Anusha Sarla (24219473)
+format: pdf
+execute:
+  echo: false 
+  warning: false
+  message: false
+---
+
+# *Introduction*
+
+The mtcars dataset, built into base R, contains performance and design metrics for **32 cars** from the 1970s, covering **11 variables** including miles per gallon (*mpg*), number of cylinders (*cyl*), horsepower (*hp*), and weight (*wt*).
+
+In this document, we are exploring the relationship between a car's **weight** and its **fuel efficiency** (*miles per gallon*).
+
+------------------------------------------------------------------------
+
+# *Descriptive Statistics*
+
+```{r}
+summary(mtcars[, c("mpg", "wt")])
+```
+
+We focus on two important variables:
+
+-   mpg: Miles per gallon (fuel efficiency)
+
+-   wt: Weight of the car (in 1000 lbs)
+
+# *Visualizing MPG vs Weight*
+
+```{r}
+# Created a scatter plot with the regression line
+plot(mtcars$wt, mtcars$mpg,
+     main = "Fuel Efficiency vs. Weight",
+     xlab = "Weight (1000 lbs)",
+     ylab = "Miles per Gallon (MPG)",
+     pch = 19, col = "steelblue")
+
+# Added the regression line
+abline(lm(mpg ~ wt, data = mtcars), col = "red", lwd = 2)
+```
+
+*The scatter plot above shows that heavier cars tend to have lower fuel efficiency.* The **red line** is a simple linear regression fit, indicating a negative correlation.
+
+# *Conclusion*
+
+From the visualization and summary statistics, we conclude:
+
+-   Heavier cars generally consume more fuel.
+
+-   This negative correlation is clearly visible in the plot.
+
+-   The mtcars dataset provides a good example of basic statistical exploration using R.
