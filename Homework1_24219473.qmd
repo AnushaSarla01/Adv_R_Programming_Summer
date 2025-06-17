@@ -20,6 +20,8 @@ In this document, we are exploring the relationship between a car's **weight** a
 
 # *Descriptive Statistics*
 
+Commit 2: This is the descriptive statistics of the mtcars Dataset
+
 ```{r}
 summary(mtcars[, c("mpg", "wt")])
 ```
